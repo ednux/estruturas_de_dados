@@ -50,3 +50,16 @@ int fila_remover(Fila *fi)
 	free(tmp);
 	return 1;
 }
+//Exibir todos os nós da fila
+int fila_exibir(Fila *fi)
+{
+	if (fi == NULL || *fi == NULL)
+		return 0;
+	No *tmp = *fi;
+	while (tmp != NULL) {
+		printf("%d ", tmp->indice);
+		tmp = tmp->prox;
+	}
+	printf("\n");
+	return 1;
+}
