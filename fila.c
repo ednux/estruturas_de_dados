@@ -23,3 +23,20 @@ void fila_liberar(Fila *fi)
 		free(fi);
 	}
 }
+//Inserir um nó na fila
+int fila_inserir(Fila *fi, No dados)
+{
+	if (fi == NULL) return 0;
+	No *tmp = (No*) malloc(sizeof(No));
+	if (tmp == NULL) return 0;
+	*tmp = dados;
+	if ((*fi) == NULL)
+		*fi = tmp;
+	else {
+		No *atual = *fi;
+		while (atual->prox != NULL)
+			atual = atual->prox;
+		atual->prox = tmp;
+	}
+	return 1;
+}
