@@ -10,3 +10,16 @@ Fila *fila_criar(void)
 		*fi = NULL;
 	return fi;
 }
+//Liberar fila
+void fila_liberar(Fila *fi)
+{	
+	if (fi != NULL) {
+		No *tmp;
+		while ((*fi) != NULL) {
+			tmp = *fi;
+			*fi = (*fi)->prox;
+			free(tmp);
+		}
+		free(fi);
+	}
+}
