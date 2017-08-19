@@ -40,3 +40,13 @@ int fila_inserir(Fila *fi, No dados)
 	}
 	return 1;
 }
+//Remover um nó da fila
+int fila_remover(Fila *fi)
+{
+	if (fi == NULL || *fi == NULL)
+		return 0;
+	No *tmp = *fi;
+	*fi = (*fi)->prox;
+	free(tmp);
+	return 1;
+}
