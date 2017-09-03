@@ -12,7 +12,7 @@ Pilha *pilha_criar(void)
 }
 //Liberar pilha
 void pilha_liberar(Pilha *pi)
-{	
+{
 	if (pi != NULL) {
 		No *tmp;
 		while ((*pi) != NULL) {
@@ -22,4 +22,19 @@ void pilha_liberar(Pilha *pi)
 		}
 		free(pi);
 	}
+}
+//Inserir um nó na pilha
+int pilha_inserir(Pilha *pi, No dados)
+{
+	if (pi == NULL) return 0;
+	No *tmp = (No*) malloc(sizeof(No));
+	if (tmp == NULL) return 0;
+	*tmp = dados;
+	if ((*pi) == NULL)
+		*pi = tmp;
+	else {
+		tmp->prox = *pi;
+		*pi = tmp;
+	}
+	return 1;
 }

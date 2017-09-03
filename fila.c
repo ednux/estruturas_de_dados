@@ -12,7 +12,7 @@ Fila *fila_criar(void)
 }
 //Liberar fila
 void fila_liberar(Fila *fi)
-{	
+{
 	if (fi != NULL) {
 		No *tmp;
 		while ((*fi) != NULL) {
