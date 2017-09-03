@@ -38,3 +38,13 @@ int pilha_inserir(Pilha *pi, No dados)
 	}
 	return 1;
 }
+//Remover um nó da pilha
+int pilha_remover(Pilha *pi)
+{
+	if (pi == NULL || *pi == NULL)
+		return 0;
+	No *tmp = *pi;
+	*pi = (*pi)->prox;
+	free(tmp);
+	return 1;
+}
