@@ -48,3 +48,16 @@ int pilha_remover(Pilha *pi)
 	free(tmp);
 	return 1;
 }
+//Exibir todos os nós da pilha
+int pilha_exibir(Pilha *pi)
+{
+	if (pi == NULL || *pi == NULL)
+		return 0;
+	No *tmp = *pi;
+	while (tmp != NULL) {
+		printf("%d ", tmp->indice);
+		tmp = tmp->prox;
+	}
+	printf("\n");
+	return 1;
+}
