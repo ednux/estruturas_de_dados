@@ -13,7 +13,7 @@
 	
 	//Declaração dos protótipos das funções
 		//Função para criar uma pilha
-		extern Fila *pilha_criar(void);
+		extern Pilha *pilha_criar(void);
 		
 		//Função para liberar uma pilha
 		extern void pilha_liberar(Pilha *pi);
