@@ -10,3 +10,16 @@ Pilha *pilha_criar(void)
 		*pi = NULL;
 	return pi;
 }
+//Liberar pilha
+void pilha_liberar(Pilha *pi)
+{	
+	if (pi != NULL) {
+		No *tmp;
+		while ((*pi) != NULL) {
+			tmp = *pi;
+			*pi = (*pi)->prox;
+			free(tmp);
+		}
+		free(pi);
+	}
+}
